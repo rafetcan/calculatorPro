@@ -20,8 +20,6 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  BannerAd? _bannerAd;
-
   List<String> buttonList = [
     "AC",
     "+/-",
@@ -183,6 +181,7 @@ class _CalculatorState extends State<Calculator> {
     _createBannerAd();
   }
 
+  BannerAd? _bannerAd;
   void _createBannerAd() {
     _bannerAd = BannerAd(
       size: AdSize.fullBanner,
@@ -200,13 +199,14 @@ class _CalculatorState extends State<Calculator> {
       title: 'Calculator Pro',
       home: SafeArea(
         child: Scaffold(
-          bottomNavigationBar: _bannerAd == null
-              ? Container()
-              : Container(
-                  margin: const EdgeInsets.only(bottom: 12),
-                  height: 52,
-                  child: AdWidget(ad: _bannerAd!),
-                ),
+          // !! Reklam Alanı Kaldırıldı
+          // bottomNavigationBar: _bannerAd == null
+          //     ? Container()
+          //     : Container(
+          //         margin: const EdgeInsets.only(bottom: 12),
+          //         height: 52,
+          //         child: AdWidget(ad: _bannerAd!),
+          //       ),
           body: Column(
             children: <Widget>[
               Row(
